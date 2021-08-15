@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 class="mt-16 text-6xl text-center">Let's get some <span class="text-purple-600">Money</span>!!</h1>
+
+    <div class="grid grid-cols-3 gap-x-5 w-3/4 text-center mx-auto mt-16 text-white text-3xl">
+        <!-- deposit  -->
+        <div class=" bg-green-300 rounded p-5">
+            <p>Deposit</p>
+            <br>
+            <span>$</span><p class="inline" id="deposit">00</p>
+        </div>
+        <!-- withdraw  -->
+        <div class=" bg-blue-300 rounded p-5">
+            <p>Withdraw</p>
+            <br>
+            <span>$</span><p id="withdraw" class="inline">00</p>
+        </div>
+        <!-- balance  -->
+        <div class=" bg-yellow-300 rounded p-5">
+            <p>Balance</p>
+            <br>
+            <span>$</span><p id="balance" class="inline">00</p>
+        </div>
+
+    </div>
+    <div class="grid grid-cols-2 gap-x-5 w-3/4 text-center mx-auto mt-16 text-white ">
+        <!-- deposit  -->
+        <div class=" bg-purple-300 rounded p-5">
+            <p class="text-black text-2xl">Please Deposit</p>
+            <input id="deposit-field" class="rounded my-3 text-black" type="text" placeholder="$amount you want to deposit">
+            <br>
+            <button id="deposit-btn" class="bg-yellow-700 my-5 rounded p-2 text-center">Deposit</button>
+        </div>
+        <!-- withdraw  -->
+        <div class=" bg-red-300	 rounded p-5">
+            <p class="text-black text-2xl">Please Withdraw</p>
+            <input id="withdraw-field" class="rounded my-3 text-black" type="text" placeholder="$amount you want to withdraw">
+
+            <br>
+            <button id="withdraw-btn" class="bg-yellow-700 my-5 rounded p-2 text-center">Withdraw</button>
+            </button>
+
+        </div>
+    </div>
+    <!-- js  -->
+    <script src="./js/banking.js"></script>
+</body>
+
+</html>
