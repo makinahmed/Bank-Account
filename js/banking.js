@@ -12,6 +12,8 @@ let balance = document.getElementById('balance')
 function getMoneyFromInputField(inputField) {
     let currentValueText = inputField.value
     let currentValueNum = parseFloat(currentValueText);
+    // clear inputField
+    inputField.value = '';
     return currentValueNum;
 }
 
@@ -33,12 +35,11 @@ depositBtn.addEventListener('click', function () {
     let totalBalanceAmount = prevBlanaceAmount + newDepositAmount;
     balance.innerText = totalBalanceAmount;
     deposit.innerText = currentDepositAmount
-    // clear deposit input field 
-    depositField.value = ''
+
 
 })
 
-//widthdraw btn
+//withdraw btn
 
 
 withdrawBtn.addEventListener('click', function () {
@@ -51,33 +52,7 @@ withdrawBtn.addEventListener('click', function () {
     let currentBalanceAmount = getInnerTextNumber(balance);
     let newBalanceAmount = currentBalanceAmount - currentWithdrawAmount;
     balance.innerText = newBalanceAmount;
-    // clear deposit input field 
-    withDrawField.value = ''
+
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // withdraw
-
-
-
-        // let previousBalance = balance.innerText;
-        // let previousBalanceAmount = parseFloat(previousBalance)
-        // let newBalance = currentDepositAmount + previousBalanceAmount;
-        // balance.innerText = newBalance
 
 
