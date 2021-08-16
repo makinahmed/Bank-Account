@@ -8,15 +8,6 @@ let withdraw = document.getElementById('withdraw')   // innerText & previous Val
 let balance = document.getElementById('balance')
 
 
-//deposit
-
-let previousDeposit = deposit.innerText;
-let previousDepositAmount = parseFloat(previousDeposit)
-let newDeposit = depositField.value
-let newDepositAmount = parseFloat(newDeposit)
-let currentDepositAmount = previousDeposit + newDepositAmount;
-let previousBalance = balance.innerText
-
 // deposit button event
 
 depositBtn.addEventListener('click', function () {
@@ -26,26 +17,46 @@ depositBtn.addEventListener('click', function () {
     let newDeposit = depositField.value
     let newDepositAmount = parseFloat(newDeposit)
     let currentDepositAmount = previousDepositAmount + newDepositAmount;
+
+    let prevBlanace = balance.innerText
+    let prevBlanaceAmount = parseFloat(prevBlanace)
+
+    let totalBalanceAmount = prevBlanaceAmount + newDepositAmount;
+    balance.innerText = totalBalanceAmount;
+
     deposit.innerText = currentDepositAmount
     // clear deposit input field 
     depositField.value = ''
 
 })
 
+//widthdraw btn
+
+
 withdrawBtn.addEventListener('click', function () {
 
-    let withDrawAmount = parseFloat(withDrawField.value)
-    withdraw.innerText = withDrawAmount;
+    let prevWithdraw = withdraw.innerText;
+    let prevWithdrawAmount = parseFloat(prevWithdraw)
 
+    let currentWithdraw = withDrawField.value;
+    let currentWithdrawAmount = parseFloat(currentWithdraw);
 
-    // balance 
-    balance.innerText = 'তোর টাকা থাকলেও নাই যা ভাগ!!';
+    let totalWithdraw = prevWithdrawAmount + currentWithdrawAmount;
 
-    // let previousBalanceAmount = parseFloat(previousBalance)
-    // let newBalance = currentDepositAmount + previousBalanceAmount;
-    // balance.innerText = newBalance
+    withdraw.innerText = totalWithdraw;
 
+    //balance
 
+    let currentBalance = balance.innerText;
+
+    let currentBalanceAmount = parseFloat(currentBalance);
+
+    let newBalanceAmount = currentBalanceAmount - currentWithdrawAmount;
+
+    balance.innerText = newBalanceAmount;
+
+    // clear deposit input field 
+    withDrawField.value = ''
 })
 
 
